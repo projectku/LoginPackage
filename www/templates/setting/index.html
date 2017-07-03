@@ -1,0 +1,41 @@
+<ion-view view-title="Account" id="login">
+	<ion-content padding="true">
+	  <ion-list>
+		    <ion-item class="profile-item">
+		      <div class="profile-picture-login big-profile-picture">
+		        <img data-ng-src="{{profile.picture}}" width="100%" height="100%">
+		      </div>
+		      <h5 class="profile-namex dark">{{profile.nickname|lowercase}}</h5>
+		    </ion-item>
+      		<div class="list card">
+	      		<div class="item row" style="background:#2aa5ad">
+		          <span  class="col col-100">SocMed Connected</span>
+		        </div>
+		      	<ion-toggle  ng-model="settings.enablefacebook" ng-click="loginWithFacebook()">
+			        Link To Facebook
+			    </ion-toggle>
+			    <ion-toggle  ng-model="settings.enablegoogle" ng-click="loginWithGoogle()">
+			        Link To Google+
+			    </ion-toggle>
+			    <ion-toggle  ng-model="settings.enabletwitter" ng-click="loginWithTwitter()">
+			        Link To Twitter
+			    </ion-toggle>
+			    <ion-toggle  ng-model="settings.enableyahoo" ng-click="loginWithYahoo()">
+			        Link To Yahoo
+			    </ion-toggle>
+	      		<div class="item row" style="background:#2aa5ad">
+		          <span  class="col col-100">Account Setting</span>
+		        </div>
+		        <ion-item class="item item-icon-right" type="item-text-wrap" ng-click="openchangepasswordmodal()">
+			        <h2>Change Password</h2>
+			        <i class="icon ion-chevron-right"></i>
+		      	</ion-item>
+			    <ion-item class="item item-icon-right" type="item-text-wrap" ng-click="logout()">
+			        <h2>Log Out</h2>
+			        <i class="icon ion-log-out"></i>
+		      	</ion-item>
+	      	</div>
+	    </ion-list>
+	</ion-content>
+</ion-view>
+
