@@ -95,10 +95,6 @@ angular.module('starter', ['ngCordova','ionic','ionic-ratings','ui.calendar','au
 .controller('DashboardCtrl', function($scope) 
 {
     var menus       = [];
-    menus.push({src: "img/jadwal.png",link:"#/tab/jadwal",judul:"Jadwal Kunjungan"});
-    menus.push({src: "img/history.png",link:"#/tab/history",judul:"History"});
-    menus.push({src: "img/feedback.png",link:"#/tab/feedback",judul:"Customer Feedback"});
-    menus.push({src: "img/jasa.png",link:"#/tab/informasi",judul:"Informasi"});
     menus.push({src: "img/settings.png",link:"#/tab/setting",judul:"Setting"});
     $scope.menus = menus;
 });
