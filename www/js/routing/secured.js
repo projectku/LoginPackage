@@ -59,19 +59,6 @@ angular.module('starter')
         }
     });
 
-    $stateProvider.state('auth.signup', 
-    {
-        url: '/signup',
-        views: 
-        {
-            'signup-tab': 
-            {
-              templateUrl: 'templates/secured/login.html',
-              // controller: 'RegisterCtrl',
-            }
-        }
-    });
-
     $stateProvider.state('tab', 
     {
         url: '/tab',
@@ -79,6 +66,7 @@ angular.module('starter')
         templateUrl: 'templates/tabs.html',
         controller: 'AppCtrl'
     });
+    
     $stateProvider.state('tab.dashboard', 
     {
         url: '/dashboard',
@@ -91,12 +79,25 @@ angular.module('starter')
           }
         }
     });
+    
+    $stateProvider.state('tab.setting', 
+    {
+        url: '/setting',
+        views: 
+        {
+          'view-content': 
+            {
+              templateUrl: 'templates/setting/index.html',
+              controller: 'SettingCtrl'
+          }
+        }
+    });
 
     $urlRouterProvider.otherwise('/auth/login');
     $ionicConfigProvider.views.maxCache(0);
     $ionicConfigProvider.navBar.alignTitle('center');
     $ionicConfigProvider.backButton.text('Back').icon('ion-chevron-left');
-    // $ionicConfigProvider.scrolling.jsScrolling(true);
+    $ionicConfigProvider.scrolling.jsScrolling(true);
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.views.swipeBackEnabled(false);
 });

@@ -1,10 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ngCordova','ionic','ionic-ratings','ui.calendar','auth0','ionic-zoom-view'])
-
 .run(function($ionicPlatform,$location,auth,$rootScope,StorageService) 
 {
   auth.hookEvents();
@@ -43,11 +37,11 @@ angular.module('starter', ['ngCordova','ionic','ionic-ratings','ui.calendar','au
       }
   });
 })
+
 .controller('AppCtrl', function($ionicPlatform,$ionicActionSheet,$window,$rootScope,$scope,$filter,$state,$ionicLoading,$timeout,$ionicHistory,StorageService) 
 {
     $scope.tglskrg            = $filter('date')(new Date(),'yyyy-MM-dd');
     $scope.profile            = StorageService.get('profile');
-    console.log($scope.profile);
 
     $scope.logout = function() 
     {
@@ -77,9 +71,9 @@ angular.module('starter', ['ngCordova','ionic','ionic-ratings','ui.calendar','au
             console.log('DESTRUCT');
             return true;
           }
-        });
-      
+        }); 
     };
+
     $ionicPlatform.registerBackButtonAction(function (event) 
     {
       if($state.current.name=="tab.dashboard")
@@ -92,6 +86,7 @@ angular.module('starter', ['ngCordova','ionic','ionic-ratings','ui.calendar','au
       }
     }, 100);
 })
+
 .controller('DashboardCtrl', function($scope) 
 {
     var menus       = [];

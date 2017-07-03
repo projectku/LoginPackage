@@ -122,6 +122,7 @@ angular.module('starter')
                 });
         });    
     }
+    
     $scope.loginWithYahoo = function ()
     {
         $ionicLoading.show();
@@ -189,7 +190,6 @@ angular.module('starter')
             }
             else
             {
-                console.log(result);
                 var profile = {};
                 profile.nickname        = result.username;
                 profile.email           = result.email;
@@ -206,7 +206,6 @@ angular.module('starter')
         }, 
         function (err) 
         {          
-            console.log(err);
             swal({
                   title: "Login Failed",
                   text: "Cek Jaringan Dan Paket Data Anda Atau Ulangi Login Kembali",
@@ -523,8 +522,6 @@ angular.module('starter')
             console.log(errorgetprofilelogin);
         });
     }
-
-    
 
     $scope.customers = {'email':profile.email,'NAMA':profile.name}
     $scope.registerbaru = function (customers) 
